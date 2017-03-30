@@ -38,6 +38,10 @@ public class PasangersWagon extends PodvizhnayEdinica {
 	public String getKomfort() {
 		return komfort;
 	}
+	
+	public int getSeating() {
+		return seating;
+	}
 
 	public void setKomfort(String komfort) {
 		if(pasangers == 0) {

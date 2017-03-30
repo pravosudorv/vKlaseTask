@@ -43,7 +43,7 @@ public class BiletnoeBuro {
 				if (proverkaPasangersWagon(poezd.getPodvizhnayEdinica(i))) {
 					PasangersWagon wagon = (PasangersWagon) (poezd.getPodvizhnayEdinica(i));
 					if (min <= wagon.getPasangers()	&& max >= wagon.getPasangers()) {
-						poezd.print(i);
+						
 					}
 				}
 			}

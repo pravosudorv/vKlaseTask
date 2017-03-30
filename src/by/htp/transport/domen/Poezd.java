@@ -47,7 +47,7 @@ public class Poezd {
 	public PodvizhnayEdinica getPodvizhnayEdinica(int index) {
 		if (index < kyrsor) {
 			PodvizhnayEdinica edinica;
-			edinica = sostavWagons[index - 1];
+			edinica = sostavWagons[index];
 			return edinica;
 		} else {
 			System.out.println("vagona s takim nomerom net");
