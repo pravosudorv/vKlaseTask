@@ -5,7 +5,7 @@ public class Poezd {
 	private int kyrsor = 0;
 	private static final int INIT_SIZE = 20;
 	private static final double PERCENT = 0.75;
-	
+
 	public Poezd() {
 		this.sostavWagons = new PodvizhnayEdinica[INIT_SIZE];
 	}
@@ -14,46 +14,60 @@ public class Poezd {
 		this.sostavWagons = new PodvizhnayEdinica[size];
 	}
 	
+	public int getKyrsor() {
+		return kyrsor;
+	}
+
 	public void addPodvizhnayEdinica(PodvizhnayEdinica edinica) {
-		if(edinica.equals(null)) {
+		if (edinica.equals(null)) {
 			return;
 		}
-		if(kyrsor == sostavWagons.length *PERCENT) {
+		if (kyrsor == sostavWagons.length * PERCENT) {
 			inkrementSizePoezd();
 		}
 		sostavWagons[kyrsor] = edinica;
 		kyrsor++;
- 	}
+	}
 
 	private void inkrementSizePoezd() {
 		PodvizhnayEdinica[] newPoezd = new PodvizhnayEdinica[newSize()];
-		for(int i = 0; i < kyrsor; i++) {
+		for (int i = 0; i < kyrsor; i++) {
 			newPoezd[i] = sostavWagons[i];
 		}
 		sostavWagons = newPoezd;
-	} 
-	
+	}
+
 	private int newSize() {
 		int k = 3;
 		int n = 2;
 		int newSize = sostavWagons.length * k / n;
 		return newSize;
 	}
-	
-	public void delPodvizhnayEdinica(int index) {
-		if(index < kyrsor) {
-		sostavWagons[index-1] = null;
-		sdvig(index);
+
+	public PodvizhnayEdinica getPodvizhnayEdinica(int index) {
+		if (index < kyrsor) {
+			PodvizhnayEdinica edinica;
+			edinica = sostavWagons[index - 1];
+			return edinica;
+		} else {
+			System.out.println("vagona s takim nomerom net");
+			return null;
 		}
 	}
-	
+
+	public void delPodvizhnayEdinica(int index) {
+		if (index < kyrsor) {
+			sostavWagons[index - 1] = null;
+			sdvig(index);
+		}
+	}
+
 	private void sdvig(int index) {
-		for(int i = index; i < kyrsor; i++) {
-			sostavWagons[i-1] = sostavWagons[i];
+		for (int i = index; i < kyrsor; i++) {
+			sostavWagons[i - 1] = sostavWagons[i];
 		}
 		sostavWagons[kyrsor] = null;
 		kyrsor--;
 	}
-	
-	
+
 }
