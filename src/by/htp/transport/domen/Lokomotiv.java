@@ -2,8 +2,20 @@ package by.htp.transport.domen;
 
 public class Lokomotiv extends PodvizhnayEdinica implements Propulsion{
 	private int power;
+	private final int maxSped;
 	//private String tyaga;
 	
+	public Lokomotiv() {
+		maxSped = 90;
+	}
+	
+	public Lokomotiv(int maxSped) {
+		if(maxSped <= 160) {
+		this.maxSped = maxSped;
+		} else {
+			this.maxSped = 90;
+		}
+	}
 	
 	public void go(Poezd poezd) {
 		if(provercaSoedineniyaSostava(poezd)) {

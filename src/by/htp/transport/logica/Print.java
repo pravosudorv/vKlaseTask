@@ -19,8 +19,13 @@ public class Print {
 	}
 	
 	private static boolean proverkaPasangersWagon(PodvizhnayEdinica edinica) {
+		if(!"null".equals(edinica)) {
 		if (edinica instanceof PasangersWagon) {
+		//if (getClass(PasangersWagon).equals) {	
 			return true;
+		} else {
+			return false;
+			}
 		} else {
 			return false;
 		}

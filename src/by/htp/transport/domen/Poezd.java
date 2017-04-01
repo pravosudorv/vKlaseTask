@@ -1,7 +1,7 @@
 package by.htp.transport.domen;
 
 public class Poezd {
-	private PodvizhnayEdinica[] sostavWagons;
+	public PodvizhnayEdinica[] sostavWagons;
 	private int kyrsor = 0;
 	private static final int INIT_SIZE = 20;
 	private static final double PERCENT = 0.75;

@@ -39,6 +39,10 @@ public class PasangersWagon extends PodvizhnayEdinica {
 		return komfort;
 	}
 	
+	public int getIntKomfort() {
+		return intKomfort;
+	}
+
 	public int getSeating() {
 		return seating;
 	}
@@ -79,7 +83,7 @@ public class PasangersWagon extends PodvizhnayEdinica {
 
 	private boolean proverkaKomfort(String komfort) {
 		for (String i : listKomfort) {
-			if (komfort.equals(komfort)) {
+			if (i.equals(komfort)) {
 				return true;
 			}
 		}
@@ -110,9 +114,4 @@ public class PasangersWagon extends PodvizhnayEdinica {
 			break;
 		}
 	}
-
-	public void print() {
-		System.out.println("komfort :" + komfort + ", pasangers :" + pasangers + " seating :" + seating);
-	}
-
 }
